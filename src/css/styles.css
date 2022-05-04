@@ -10,5 +10,51 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  margin: 0;
 }
 
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(9, 9, 195, 0.6);
+  width: 100vw;
+  height: 35px;
+}
+
+.serch-text {
+  background-color: rgb(216, 216, 29);
+  color: rgb(5, 5, 147);
+  outline: none;
+  border: 1px solid rgba(141, 134, 138, 0.84);
+}
+
+.serch-text::placeholder {
+  color: rgba(31, 31, 206, 0.523)
+}
+
+.search-btn {
+  background-color: rgb(216, 216, 29);
+  color: rgb(5, 5, 147);
+  outline: none;
+  border: 1px solid rgba(141, 134, 138, 0.84);
+
+}
+
+.search-btn:hover {
+  background-color: rgba(20, 20, 205, 0.87);
+  color: rgb(216, 216, 29);
+}
+
+.load-more {
+  display: block;
+  width: 130px;
+  height: 35px;
+  margin: 0px auto;
+  background-color: rgba(9, 9, 195, 0.6);
+  color: rgb(216, 216, 29);
+  box-shadow: 2px 2px yellow;
+  outline: none;
+  border: 1px solid rgb(216, 216, 29);
+  border-radius: 30px;
+}
