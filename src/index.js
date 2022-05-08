@@ -13,6 +13,8 @@ const loadBtn = new LoadBtn({
     hidden: true,
 });
 
+let lightbox = new SimpleLightbox('.gallery a', {captionsData: 'alt', });
+
 const refs = {
     form: document.querySelector('#search-form'),
     searchBtn: document.querySelector('.search-btn'),
@@ -30,11 +32,10 @@ function onSearchClick(evt){
     request.query = searchData;
 
     if(searchData === '') return;
-
+    
     clearGalleryContainer();
     request.resetPage();
     fetchAndRenderImages();
-    
 
     evt.target.reset();
 };
@@ -45,23 +46,30 @@ function onLoadBtnClick(){
 
 function onImgClick(evt){
     if (evt.target.nodeName !== "IMG") return;
-    let gallery = new SimpleLightbox('.gallery .photo-card a')
-    gallery.open()
+
 }
 
 async function fetchAndRenderImages(){
     try {
         loadBtn.show();
         loadBtn.disable();
-        const images = await request.fetchImages();
-        console.log(images);
-        if (images.length === 0) {return}
+        const fetchData = await request.fetchImages();
+        const images = fetchData.hits;
+        const totalImgsFound = fetchData.totalHits;
+    Notify.success(`Hooray! We found ${totalImgsFound} images.`)
+        
+    if (images.length === 0) {
+        Notify.warning("We are sorry, but we didn't found any matches!!!");
+        loadBtn.hide()
+        return
+    }
         renderImages(images);
+        lightbox.refresh()
         request.incrementPage();
         loadBtn.able();
 
     } catch (error) {
-        console.log(error.message);
+        Notify.failure(`${error.message}`);
     }
     
 }
@@ -75,3 +83,5 @@ function renderImages(images){
 function clearGalleryContainer(){
     refs.gallery.innerHTML = '';
 }
+
+

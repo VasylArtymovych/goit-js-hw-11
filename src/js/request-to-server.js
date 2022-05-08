@@ -19,8 +19,7 @@ export default class UserRequest{
         })
 
         const response = await axios.get(`${BASE_URL}?${params}`);
-        
-        return response.data.hits;
+        return response.data;
     }
 
     get query(){

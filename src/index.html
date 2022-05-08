@@ -10,26 +10,29 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <title>Homework 11</title>
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input
-        id="query"
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-        class="serch-text"
-      />
-      <button type="submit" class="search-btn">Search</button>
-    </form>
+    <div class="container">
+      <form class="search-form" id="search-form">
+        <input
+          id="query"
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+          class="serch-text"
+        />
+        <button type="submit" class="search-btn"><span class="material-icons">search</span></button>
+      </form>
 
-    <div class="gallery"></div>
-    <button type="button" class="load-btn" data-action="load">
-      <span class="spinner-border-sm spiner" role="status" aria-hidden="true"></span>
-      <span class="load-btn_text">Load more</span>
-    </button>
+      <div class="gallery"></div>
+      <button type="button" class="load-btn" data-action="load">
+        <span class="spinner-border-sm spiner" role="status" aria-hidden="true"></span>
+        <span class="load-btn_text">Load more</span>
+      </button>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
