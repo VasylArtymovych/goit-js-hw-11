@@ -1,8 +1,8 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
 import './css/styles.css';
+
 import templateFunction from './templates/pxbayImgs.hbs';
 import UserRequest from './js/request-to-server';
 import LoadBtn from './js/loadMoreImgs';
